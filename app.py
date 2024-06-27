@@ -6,7 +6,11 @@ app = Flask(__name__)
 def homepage():
     return render_template('home.html')
 
+@app.route('/explore-top-restaurants')
+def top_restaurants():
+    return render_template('explore-top-restaurants.html')
+
 if __name__ == '__main__':
     app.run()
-    
+
 

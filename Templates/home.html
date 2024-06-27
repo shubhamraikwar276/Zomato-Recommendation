@@ -1,77 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dine-in Delights</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        .animation {
-            margin-top: 30px;
-        }
-        
-        .food {
-            width: 50px;
-            height: 50px;
-            background-color: #f39c12;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 10px;
-            animation: food-float 2s infinite;
-        }
-        
-        @keyframes food-float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        .button-container {
-            margin-top: 30px;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dine-in Delights Hyderabad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+<style>
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
+    overflow: hidden; /* Hide overflow for animation */
+  }
+
+  .hero {
+    background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png'); /* Zomato background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Position relative for absolute positioning */
+    overflow: hidden; /* Hide overflow for animation */
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-style: italic; /* Italicize the heading */
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .button {
+    display: inline-block;
+    background-color: #ff6347;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    background-color: #e74c3c;
+  }
+
+  .food-icons {
+    font-size: 4rem;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1; /* Ensure icons are above the wave animation */
+  }
+
+  .food-icons span {
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  .footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px; /* Smaller padding */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem; /* Smaller font size */
+    height: 30px; /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Dine-in Delights</h1>
-        <div class="animation">
-            <div class="food"></div>
-            <div class="food"></div>
-            <div class="food"></div>
-        </div>
-        <div class="button-container">
-            <a href="dashboard.html" class="button">Explore Dashboard</a>
-        </div>
-    </div>
+
+<div class="hero">
+  <h1>Dine-in Delights Hyderabad</h1>
+  <p>Discover the best restaurants in Hyderabad!</p>
+  <a href="/explore-top-restaurants" class="button">Explore Top Restaurants😋</a>
+  <div class="food-icons">
+    <span>🍛</span>
+    <span>🍲</span>
+    <span>🍕</span>
+    <span>🍗</span>
+    <span>🍜</span>
+    <span>🍰</span>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 YourCompany. All rights reserved.</p>
+</div>
+
+<script>
+  // JavaScript to dynamically change background image
+  var images = [
+    'https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png', // Zomato background image
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/d3/c8/b8/kangan.jpg?w=600&h=-1&s=1',
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/5c/5e/b6/outer-deck-are-for-mazzo.jpg?w=1100&h=-1&s=1',
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/0a/3a/32/img-20190110-125812-largejpg.jpg?w=1000&h=-1&s=1',
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/9d/3b/70/ambiance.jpg?w=2000&h=-1&s=1'
+  ];
+  var index = 1; // Start with the second image
+  function changeBackground() {
+    document.querySelector('.hero').style.backgroundImage = 'url(' + images[index] + ')';
+    index = (index + 1) % images.length;
+  }
+  setInterval(changeBackground, 4000); // Change image every 4 seconds (adjust timing as needed)
+</script>
+
 </body>
 </html>
