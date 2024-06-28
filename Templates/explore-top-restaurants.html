@@ -8,20 +8,78 @@
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
-    .tableau-dashboard {
-      width: 100%;
-      height: 100vh;
+    .header {
+      background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
       position: relative;
+      z-index: 1;
+      overflow: hidden; /* Ensure overflow is hidden */
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+      overflow: hidden; /* Ensures text doesn't overflow during animation */
+      white-space: nowrap; /* Prevents the text from wrapping */
+      animation: typewriter 4s steps(40) 1 forwards; /* Typewriter animation with steps */
+    }
+
+    @keyframes typewriter {
+      from {
+        width: 0; /* Start with no width */
+      }
+      to {
+        width: 100%; /* Gradually expand to full width */
+      }
+    }
+
+    .footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      z-index: 1;
+      clear: both; /* Ensure footer clears floated content */
+      margin-top: 20px; /* Add some space between content and footer */
+    }
+
+    .tableau-placeholder {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 0;
+    }
+
+    .tableau-placeholder img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-<div class="tableau-dashboard">
+<div class="header">
+  <div class="container">
+    <h1>Use our Filter Tool and try not to get lost in the endless choices🥢</h1>
+  </div>
+</div>
+
+<div class="tableau-placeholder">
   <!-- Tableau Embed Code -->
-  <div class='tableauPlaceholder' id='viz1719494850040'>
+  <div class='tableauViz' id='viz1719494850040'>
     <noscript>
       <a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/TN/TN6W4MY47/1_rss.png' style='border: none;' /></a>
     </noscript>
@@ -40,24 +98,29 @@
       <param name='filter' value='publish=yes' />
     </object>
   </div>
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1719494850040');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if (divElement.offsetWidth > 800) {
-      vizElement.style.width = '100%';
-      vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-    } else if (divElement.offsetWidth > 500) {
-      vizElement.style.width = '100%';
-      vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-    } else {
-      vizElement.style.width = '100%';
-      vizElement.style.height = 'calc(100vh - 120px)'; /* Adjusted height for smaller screens */
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
 </div>
+
+<div class="footer">
+  <p>© 2024 Dine-in Delights. All rights reserved.</p>
+</div>
+
+<script type='text/javascript'>
+  var divElement = document.getElementById('viz1719494850040');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+  if (divElement.offsetWidth > 800) {
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+  } else if (divElement.offsetWidth > 500) {
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+  } else {
+    vizElement.style.width = '100%';
+    vizElement.style.height = 'calc(100vh - 120px)'; /* Adjusted height for smaller screens */
+  }
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
 
 </body>
 </html>

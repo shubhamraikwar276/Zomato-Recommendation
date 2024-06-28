@@ -35,11 +35,21 @@
     font-size: 3rem;
     margin-bottom: 20px;
     font-style: italic; /* Italicize the heading */
+    transition: text-shadow 0.3s ease-out; /* Transition for glow effect */
+  }
+
+  h1:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff6347; /* Glow effect */
   }
 
   p {
     font-size: 1.5rem;
     margin-bottom: 30px;
+    transition: text-shadow 0.3s ease-out; /* Transition for glow effect */
+  }
+
+  p:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff6347; /* Glow effect */
   }
 
   .button {
@@ -50,10 +60,12 @@
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 4px;
+    transition: box-shadow 0.3s ease-out; /* Transition for glow effect */
   }
 
   .button:hover {
     background-color: #e74c3c;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff6347; /* Glow effect */
   }
 
   .food-icons {
@@ -61,11 +73,21 @@
     margin-top: 20px;
     position: relative;
     z-index: 1; /* Ensure icons are above the wave animation */
+    animation: wave 2s infinite alternate; /* Animation for waving effect */
   }
 
   .food-icons span {
     margin: 0 10px;
     display: inline-block;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); /* Adjust the amount of wave */
+    }
   }
 
   .footer {
@@ -108,10 +130,8 @@
   // JavaScript to dynamically change background image
   var images = [
     'https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png', // Zomato background image
-    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/d3/c8/b8/kangan.jpg?w=600&h=-1&s=1',
-    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/5c/5e/b6/outer-deck-are-for-mazzo.jpg?w=1100&h=-1&s=1',
-    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/0a/3a/32/img-20190110-125812-largejpg.jpg?w=1000&h=-1&s=1',
-    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/9d/3b/70/ambiance.jpg?w=2000&h=-1&s=1'
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/0e/c1/65/food.jpg?w=1400&h=-1&s=1', // New second image
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/32/96/f5/feast.jpg?w=1000&h=-1&s=1', // New third image
   ];
   var index = 1; // Start with the second image
   function changeBackground() {
